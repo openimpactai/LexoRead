@@ -1,84 +1,150 @@
-# LexoRead Datasets
+# LexoRead: AI-Supported Reading Assistant for Dyslexia
 
-This directory contains datasets and utilities for the LexoRead project, an AI-powered reading assistant for dyslexia and reading impairments.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Issues](https://img.shields.io/github/issues/openimpactai/lexoread.svg)](https://github.com/openimpactai/lexoread/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/openimpactai/lexoread.svg)](https://github.com/openimpactai/lexoread/stargazers)
 
-## Directory Structure
+LexoRead is an open-source AI-powered reading assistant designed specifically for individuals with dyslexia and reading impairments. The project aims to make reading more accessible through advanced text processing, OCR, and speech technologies.
+
+## Features
+
+- **Intelligent Text Adaptation**: Adjusts text display based on individual reading preferences and dyslexia patterns
+- **Text-to-Speech**: High-quality audio rendering of text with adjustable speed and voice options
+- **OCR Capabilities**: Extract text from images, documents, and physical books
+- **Reading Comprehension Tools**: Highlighting, summarization, and vocabulary assistance
+- **Progress Tracking**: Monitor reading improvement over time
+- **Cross-Platform Support**: Web, mobile, and desktop applications
+
+## Project Structure
 
 ```
-datasets/
+lexoread/
 │
-├── download_scripts/     # Scripts to download and prepare external datasets
-│
-├── text_corpus/          # Reading materials in various difficulty levels
-│   ├── reading_levels/
-│   │   ├── elementary/
-│   │   ├── middle_school/
-│   │   └── high_school/
-│
-├── dyslexia_samples/     # Samples of dyslexic handwriting and reading patterns
-│   ├── handwriting/
-│   ├── reading_errors/
-│
-├── ocr_data/             # Data for OCR model training
-│   ├── annotated_images/
-│   ├── test_samples/
-│
-├── speech_samples/       # Audio data for TTS and STT models
-│   ├── tts_training/
-│
-├── preprocessing/        # Utilities for data preprocessing
-│
-└── config/               # Configuration files for dataset parameters
+├── api/               # Backend API for the application
+├── datasets/          # Training and evaluation datasets
+├── docs/              # Documentation and guides
+├── frontend/          # User interface components
+├── models/            # ML models for text processing and speech
+├── notebooks/         # Research and development notebooks
+├── scripts/           # Utility scripts
+└── tests/             # Testing suite
 ```
-
-## Dataset Sources
-
-The datasets used in this project come from the following sources:
-
-1. **Common Voice** - Mozilla's open-source collection of voice recordings
-2. **TextOCR** - A dataset for text recognition in natural images
-3. **Dyslexia Handwriting Samples** - Collected from various research studies
-4. **Project Gutenberg** - Free eBooks for reading samples
-5. **OpenDyslexic Font** - Typeface designed for readers with dyslexia
 
 ## Getting Started
 
-To download and prepare the datasets:
+### Prerequisites
 
-1. Install the required dependencies:
+- Python 3.8+
+- Node.js 14+ (for frontend)
+- Git
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/openimpactai/lexoread.git
+   cd lexoread
+   ```
+
+2. Set up a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+   ```
+
+3. Install backend dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Set up the datasets:
+   ```bash
+   cd datasets
+   pip install -r requirements.txt
+   python download_scripts/download_all.py
+   ```
+
+5. Install frontend dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+### Running the Application
+
+1. Start the backend server:
+   ```bash
+   python api/app.py
+   ```
+
+2. In a separate terminal, start the frontend development server:
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+3. Open your browser and navigate to `http://localhost:3000`
+
+## Dataset Preparation
+
+LexoRead relies on several datasets for training and evaluation. The `datasets` directory contains scripts to download and prepare these datasets:
+
 ```bash
-pip install -r requirements.txt
+cd datasets
+python download_scripts/download_all.py --sample  # For a small sample
 ```
 
-2. Run the download scripts:
+See the [datasets README](datasets/README.md) for more information.
+
+## Model Training
+
+To train the models, use the scripts in the `models` directory:
+
 ```bash
-cd download_scripts
-python download_all.py
+cd models
+python train_tts_model.py
+python train_ocr_model.py
 ```
-
-This will download and organize all the necessary datasets in their appropriate directories.
-
-## Data Usage
-
-These datasets are intended for:
-
-1. Training OCR models to recognize text in images
-2. Developing text-to-speech models optimized for dyslexic readers
-3. Building text simplification and adaptation models
-4. Training models to detect and assist with common dyslexic reading patterns
 
 ## Contributing
 
-If you have access to additional datasets that might be valuable for the LexoRead project, please follow these steps:
+We welcome contributions to LexoRead! Please check out our [Contributing Guide](CONTRIBUTING.md) for guidelines on how to contribute.
 
-1. Create a new download script in the `download_scripts/` directory
-2. Update the README to include information about the new dataset
-3. Submit a pull request with your changes
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests
+5. Submit a pull request
+
+## Roadmap
+
+- [x] Project setup and basic architecture
+- [x] Dataset preparation scripts
+- [ ] Basic text-to-speech model implementation
+- [ ] OCR model for text extraction from images
+- [ ] Text processing for dyslexia-friendly visualization
+- [ ] Web application frontend
+- [ ] Mobile application development
+- [ ] User testing and feedback integration
+- [ ] Customizable reading profiles
 
 ## License
 
-Each dataset has its own license terms. Please refer to the original sources for specific licensing information.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [OpenDyslexic Font](https://opendyslexic.org/)
+- [Mozilla Common Voice](https://commonvoice.mozilla.org/)
+- [Project Gutenberg](https://www.gutenberg.org/)
+- [TextOCR Dataset](https://textvqa.org/textocr/)
 
 ## Contact
 
-For questions about the datasets, please open an issue in the repository or contact the project maintainers.
+For questions or support, please [open an issue](https://github.com/openimpactai/lexoread/issues) or contact the maintainers.
+
+---
+
+<p align="center">Made with ❤️ by OpenImpactAI</p>
