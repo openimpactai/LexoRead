@@ -1,0 +1,63 @@
+{
+  "common_voice": {
+    "version": "10.0",
+    "languages": ["en"],
+    "sample_size": 100,
+    "processing": {
+      "min_duration": 1.0,
+      "max_duration": 15.0,
+      "sample_rate": 16000,
+      "validate_only": true
+    }
+  },
+  "textocr": {
+    "version": "0.1",
+    "sample_size": 50,
+    "processing": {
+      "min_width": 100,
+      "min_height": 30,
+      "max_annotations": 5000
+    }
+  },
+  "dyslexia_handwriting": {
+    "repositories": [
+      "algoasylum/Dyslexia_detection",
+      "isha-git/App-for-Dyslexia"
+    ],
+    "sample_size": 30
+  },
+  "gutenberg": {
+    "num_books": 10,
+    "min_section_length": 500,
+    "reading_levels": [
+      "elementary",
+      "middle_school",
+      "high_school"
+    ]
+  },
+  "preprocessing": {
+    "text": {
+      "lowercase": true,
+      "remove_punctuation": false,
+      "strip_html": true
+    },
+    "audio": {
+      "sample_rate": 16000,
+      "num_channels": 1,
+      "normalize": true
+    },
+    "image": {
+      "resize_width": 224,
+      "resize_height": 224,
+      "grayscale": false,
+      "normalize": true
+    }
+  },
+  "paths": {
+    "base_dir": "./datasets",
+    "text_corpus_dir": "./datasets/text_corpus",
+    "dyslexia_samples_dir": "./datasets/dyslexia_samples",
+    "ocr_data_dir": "./datasets/ocr_data",
+    "speech_samples_dir": "./datasets/speech_samples"
+  }
+}
