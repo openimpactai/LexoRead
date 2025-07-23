@@ -1,0 +1,22 @@
+# Emotion-aware TTS Requirements
+
+# Core dependencies
+torch>=1.9.0
+transformers>=4.30.0
+numpy>=1.21.0
+librosa>=0.9.0
+soundfile>=0.10.0
+
+# Emotion analysis models
+# The emotion model will be downloaded automatically from HuggingFace
+# Model: j-hartmann/emotion-english-distilroberta-base
+
+# Optional dependencies for enhanced features
+scipy>=1.7.0  # For advanced signal processing
+webrtcvad>=2.0.10  # For voice activity detection
+pydub>=0.25.0  # For audio format conversions
+
+# Development dependencies
+pytest>=7.0.0
+jupyter>=1.0.0
+matplotlib>=3.5.0  # For visualizing emotion analysis
