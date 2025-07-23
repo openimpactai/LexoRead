@@ -13,6 +13,7 @@ import logging
 
 # Import routers
 from routers import text_adaptation, ocr, tts, reading_level, user_profile, auth
+from api.summarization import router as summarization_router
 
 # Import configuration
 from config import settings
@@ -53,6 +54,7 @@ app.include_router(ocr.router, prefix="/api/ocr", tags=["OCR"])
 app.include_router(tts.router, prefix="/api/tts", tags=["Text-to-Speech"])
 app.include_router(reading_level.router, prefix="/api/reading-level", tags=["Reading Level"])
 app.include_router(user_profile.router, prefix="/api/users", tags=["User Profile"])
+app.include_router(summarization_router, prefix="/api", tags=["Text Summarization"])
 
 # Health check endpoint
 @app.get("/health", tags=["Health"])
