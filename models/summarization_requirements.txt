@@ -1,0 +1,16 @@
+# Additional requirements for Smart Text Summarization feature
+transformers>=4.35.0
+torch>=2.0.1
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+accelerate>=0.24.0
+datasets>=2.14.0
+
+# For keyword extraction
+yake>=0.4.8
+rake-nltk>=1.0.6
+keybert>=0.8.0
+
+# For readability metrics
+textstat>=0.7.3
+py-readability-metrics>=1.4.5
